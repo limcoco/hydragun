@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/tailwind.css" />
+    <!-- splide carousel -->
+    <link rel="stylesheet" href="assets/splide-core.min.css" />
+    <script defer src="assets/splide.min.js"></script>
+    <style>
+      .splide__pagination__page {
+        margin: 0 4px;
+        background: gray;
+        opacity: 0.5;
+        border-radius: 50%;
+        height: 12px;
+        width: 12px;
+      }
+      .splide__pagination__page.is-active {
+        opacity: 0.8;
+      }
+    </style>
+    <!-- END: splide carousel -->
+    <!-- alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@aerni/alpine-resize@1.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <!-- END: alpine.js -->
+
+    <!-- youtube lite embeds styles -->
+    <style>
+      .youtube-player {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+      }
+
+      .youtube-player iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 48;
+        background: 0 0;
+      }
+
+      .youtube-player img {
+        object-fit: cover;
+        display: block;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        height: auto;
+        cursor: pointer;
+        -webkit-transition: 0.4s all;
+        -moz-transition: 0.4s all;
+        transition: 0.4s all;
+      }
+
+      .youtube-player img:hover {
+        -webkit-filter: brightness(75%);
+        -moz-filter: brightness(75%);
+        filter: brightness(75%);
+      }
+
+      .youtube-player .play {
+        height: 72px;
+        width: 72px;
+        left: 50%;
+        top: 50%;
+        margin-left: -36px;
+        margin-top: -36px;
+        position: absolute;
+        background: url(https://assets.website-files.com/5f47c76e0747d1dab44d8e4e/6181f68193b65703fb7e0910_play%20icon.svg)
+          no-repeat;
+        cursor: pointer;
+      }
+    </style>
+    <!-- END: youtube lite embeds styles -->
+
+    <title>Page</title>
+  </head>
+  <body class="font-main">
+    <nav class="border border-transparent border-b-gray-200">
+      <div class="ref--logo__cont flex items-center justify-center">
+        <a
+          class="ref--nav-logo block w-auto py-7 tablet:px-8"
+          href="https://www.hydragun.com/"
+        >
+          <!-- HYDRAGUN logo -->
+          <svg
+            class="text-hydragun-black h-4 tablet:h-5"
+            fill="none"
+            viewBox="0 0 1434 182"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M116.07 6.19V75.68H38.29V6.19H0V178.51H38.29V105.94H116.07V178.51H154.36V6.19H116.07Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M293.55 6.19L256.21 78.52H254.31L235.88 41.88L217.44 6.19H172.05L236.11 112.56V178.51H274.4V112.56L338.7 6.19H293.55Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M396.37 145.65H424.5C454.5 145.65 469.64 127.65 469.64 91.75C469.64 56.53 454.52 39.04 424.5 39.04H396.37V145.65ZM358.08 178.51V6.19H430.41C455.7 6.19 475.08 13.99 488.79 29.59C502.79 45.19 509.59 66.22 509.59 92.46C509.59 118.7 502.74 139.46 488.79 155.1C475.08 170.7 455.7 178.51 430.41 178.51H358.08Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M573.17 86.32H607.44C624.44 86.32 634.44 77.1 634.44 62.21C634.44 46.84 625.93 39.04 608.67 39.04H573.17V86.32ZM534.88 178.51V6.19H620.21C655.43 6.19 675.03 25.57 675.03 57.44C675.03 76.59 664.86 91.71 648.79 99.99V101.88C664.63 106.13 672.43 117.48 672.43 135.88V157.88C672.43 167.1 673.373 173.957 675.26 178.45H636.03C634.37 174.9 633.42 168.04 633.42 157.45V141.63C633.42 126.27 627.51 118.94 609.79 118.94H573.17V178.51H534.88Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M761.24 99.56L778.03 46.14H779.44L795.28 99.56L801.9 119.17H754.62L761.24 99.56ZM755.8 6.19L695.03 178.51H734.5L744.67 148.51H811.57L821.49 178.51H863.33L800.23 6.19H755.8Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M1107.14 6.19H1145.2V110.19C1145.2 133.12 1158.67 146.83 1181.6 146.83C1204.29 146.83 1218 133.83 1218 110.19V6.19H1256.03V112.56C1256.03 133.83 1249.17 150.56 1235.7 162.67C1222.23 174.78 1204.26 180.87 1181.33 180.87C1132.4 180.87 1107.11 154.39 1107.11 112.56L1107.14 6.19Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M1395.24 6.19V75.68L1397.36 125.09H1395.94L1326.45 6.19H1282.25V178.51H1320.54V108.07L1318.18 60.55H1319.83L1388.85 178.51H1433.06V6.19H1395.24Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M1052.66 87.69H1016.92V135.35C1009.34 144 994.3 147.35 980.12 147.35C965.04 147.35 954.43 142.48 946.31 132.73C938.19 122.98 934.11 109.23 934.11 91.46C934.11 73.5267 938.213 59.6267 946.42 49.76C954.63 39.89 964.8 34.95 978.95 34.95C988.637 34.95 997.117 37.2333 1004.39 41.8C1010.59 45.7649 1015.39 51.5645 1018.13 58.39H1018.78L1053.56 48.65C1050.3 40.0005 1045.56 31.9818 1039.56 24.95L1039.47 24.85C1039.2 24.54 1038.94 24.23 1038.66 23.93C1035.07 19.9082 1031.01 16.3265 1026.58 13.26C1013.72 4.42 997.757 0 978.69 0C960.94 0 946.45 3.89 933.2 11.66C920.181 19.2058 909.684 30.4333 903.03 43.93C896.17 57.67 892.737 73.5067 892.73 91.44C892.73 118.773 900.527 140.673 916.12 157.14C931.71 173.64 954.98 181.88 981.63 181.88C1017.78 181.88 1044.92 163.83 1052.63 151.27L1052.66 87.69Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M973.2 80C973.2 80 940.67 91 908.98 91C877.29 91 858.26 80.15 858.26 80.15V118.65C858.26 118.65 877.26 129.5 908.98 129.5C940.7 129.5 973.2 118.5 973.2 118.5C973.2 118.5 1005.72 107.5 1037.41 107.5C1069.1 107.5 1088.13 118.35 1088.13 118.35V79.85C1088.13 79.85 1069.13 69 1037.41 69C1005.69 69 973.2 80 973.2 80Z"
+              fill="#BE0A0A"
+            ></path>
+          </svg>
+          <!-- END: HYDRAGUN logo -->
+        </a>
+      </div>
+    </nav>
+
+    <div class="ref--IG-posts bg-gray-200">
+      <div class="hy-container">
+        <div class="splide-ig-card grid grid-cols-4">
+          <h2
+            class="ref--slider-header hy-font-bolded col-span-4 col-start-1 row-start-1 pb-10 text-center text-2xl tablet:col-span-3 tablet:text-left tablet:text-4xl"
+          >
+            Follow us on
+            <span
+              class="bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#515BD4] bg-clip-text text-transparent"
+              >Instagram</span
+            >
+          </h2>
+          <div
+            class="ref--pagination__cont-ig col-span-4 mt-8 flex justify-center tablet:col-span-1 tablet:mt-4 tablet:items-start tablet:justify-end"
+          ></div>
+          <div
+            class="splide__track col-span-4 col-start-1 row-span-3 row-start-2"
+          >
+            <ul class="splide__list">
+              <li class="splide__slide tablet:px-4">
+                <a
+                  href="https://www.instagram.com/p/CbUQRAlLjW7/"
+                  target="_blank"
+                >
+                  <img
+                    class="aspect-square object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0279/3966/8021/files/20220320_IG.jpg?v=1647838009"
+                    alt="Instagram Post"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+              <li class="splide__slide tablet:px-4">
+                <a
+                  href="https://www.instagram.com/p/CbRreNEL16n/"
+                  target="_blank"
+                >
+                  <img
+                    class="aspect-square object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0279/3966/8021/files/202203211243.jpg?v=1647838009"
+                    alt="Instagram Post"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+              <li class="splide__slide tablet:px-4">
+                <a
+                  href="https://www.instagram.com/p/CbPGrkuLyxb/"
+                  target="_blank"
+                >
+                  <img
+                    class="aspect-square object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0279/3966/8021/files/202203211244.jpg?v=1647838009"
+                    alt="Instagram Post"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+              <li class="splide__slide tablet:px-4">
+                <a
+                  href="https://www.instagram.com/p/CbMh4iSr6LI/"
+                  target="_blank"
+                >
+                  <img
+                    class="aspect-square object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0279/3966/8021/files/275861528_817214689681706_7540107655408166250_n.jpg?v=1647838009"
+                    alt="Instagram Post"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+              <li class="splide__slide tablet:px-4">
+                <a
+                  href="https://www.instagram.com/p/CbJ9FtFrHia/"
+                  target="_blank"
+                >
+                  <img
+                    class="aspect-square object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0279/3966/8021/files/275978891_387574209419483_9138606901043037392_n.jpg?v=1647838009"
+                    alt="Instagram Post"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+              <li class="splide__slide tablet:px-4">
+                <a
+                  href="https://www.instagram.com/p/CbHYSuxrHr4/"
+                  target="_blank"
+                >
+                  <img
+                    class="aspect-square object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0279/3966/8021/files/275733003_638154670613419_3740749398666787128_n.jpg?v=1647838009"
+                    alt="Instagram Post"
+                    loading="lazy"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--  for splide__arrows -->
+          <div
+            class="splide__arrows z-10 col-span-4 col-start-1 row-start-3 flex h-0 justify-between mix-blend-difference"
+          >
+            <button class="splide__arrow splide__arrow--prev tablet:-ml-8">
+              <svg
+                class="h-10 w-10 fill-white"
+                fill="currentColor"
+                viewbox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <button class="splide__arrow splide__arrow--next tablet:-mr-8">
+              <svg
+                class="h-10 w-10 fill-white"
+                fill="currentColor"
+                viewbox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var igSplide = new Splide(".splide-ig-card", {
+          classes: {
+            arrows: "splide__arrows",
+            arrow: "splide__arrow",
+            prev: "splide__arrow--prev",
+            next: "splide__arrow--next",
+          },
+          rewind: true,
+          perPage: 3,
+          breakpoints: {
+            767: {
+              perPage: 1,
+            },
+            991: {
+              perPage: 2,
+            },
+          },
+        });
+        igSplide.on("pagination:mounted", function (data) {
+          // You can add your class to the UL element
+          const newPaginationCont = document.querySelector(
+            ".ref--pagination__cont-ig"
+          );
+          data.list.classList.add("splide__pagination--custom");
+
+          // `items` contains all dot items
+          data.items.forEach(function (item) {
+            newPaginationCont.append(item.button);
+            // item.button.textContent = String(item.page + 1);
+          });
+        });
+        igSplide.mount();
+      });
+    </script>
+
+    <!-- HEAR FROM OUR CX -->
+    <div class="ref--cx-quotes bg-white">
+      <div class="hy-container">
+        <div class="splide-cx-quote grid grid-cols-4">
+          <h2
+            class="ref--slider-header hy-font-bolded col-span-4 col-start-1 row-start-1 pb-10 text-center text-2xl tablet:col-span-3 tablet:text-left tablet:text-4xl"
+          >
+            Hear from our Customers
+          </h2>
+          <div
+            class="ref--pagination__cont-cx col-span-4 mt-8 flex justify-center tablet:col-span-1 tablet:mt-4 tablet:items-start tablet:justify-end"
+          ></div>
+          <div
+            class="splide__track col-span-4 col-start-1 row-span-3 row-start-2"
+            x-data='
+            {
+              cxQuotes: [
+                {
+                  cxName: "Robert Shepherd",
+                  cxTitle: "Relieved of post-accident muscle agitation",
+                  quote: "I had a truck accident. In rehab, I cannot walk anywhere and my sleep was terrible due to agitated legs. After I started the Hydragun, I have not gone to a masseuse for 4-5 months now. If you&apos;ve got symptomatic damage due to an injury, I definitely suggest the Hydragun.",
+                  imgUrl: "https://assets.website-files.com/5f47c76e0747d1dab44d8e4e/6181f68193b657b6f27e0915_Bob%20-%20Muscle%20Agitation4.jpg",
+                  "ytUrl": "2YHjFnJ1fP8",
+                },
+                {
+                  cxName: "Jonathon Adam",
+                  cxTitle: "Recovered from plantar fasciitis",
+                  quote: "I&apos;ve been running for 4 years. My ankle pain came out 2 years ago. I felt sharp pains in my ankle that I couldn&apos;t explain. I couldn&apos;t walk. Since using the Hydragun I haven&apos;t experienced pain at all. I&apos;m very happy to say that I haven&apos;t gone to the physio since I started using the Hydragun.",
+                  imgUrl: "https://assets.website-files.com/5f47c76e0747d1dab44d8e4e/6181f68193b657da717e091d_Jon%20-%20Plantar%20Fasciitis4.jpg",
+                  "ytUrl": "l7RdSUoi1e0",
+                },
+                {
+                  cxName: "Gordon Booth",
+                  cxTitle: "Relieved of lower back pain",
+                  quote: "Over the last 35 years, I&apos;ve experienced intermittent pain in my lower back. Hydragun also gives me almost instant relief, because I can apply it to myself. Anyone who experiences pain in their lower back, carpal tunnel should benefit from this amazing product.",
+                  imgUrl: "https://assets.website-files.com/5f47c76e0747d1dab44d8e4e/6181f68193b65729097e0925_Gordon%20-%20Lower%20Back%20Pains4.jpg",
+                  "ytUrl": "8p9XWMmK4Rc",
+                },
+                {
+                  cxName: "Toby Toh",
+                  cxTitle: "Recovered from plantar fasciitis",
+                  quote: "I have had plantar fasciitis for many many years. 5 minutes into the Hydragun massage, the pain goes away. Anything that helps with easing pain is one of the best gifts.",
+                  imgUrl: "https://assets.website-files.com/5f47c76e0747d1dab44d8e4e/6181f68193b657150a7e0919_Toby%20-%20Plantar%20Fasciitis4.jpg",
+                  "ytUrl": "FIajY5fRkSU",
+                },
+                {
+                  cxName: "Brian Yeo",
+                  cxTitle: "Relieved of delayed on-set muscle soreness",
+                  quote: "After using Hydragun on my glutes, I get an immediate feeling of relief. I use it 4-5 days a week. Hydragun helps me to recover a lot faster and gets me back up on my feet for the next session a lot quicker.",
+                  imgUrl: "https://assets.website-files.com/5f47c76e0747d1dab44d8e4e/6181f68193b65746fb7e0921_Brian%20-%20Post-workout%20Soreness4.jpg",
+                  "ytUrl": "S604FkxecLs",
+                },
+                {
+                  cxName: "Chris Yap",
+                  cxTitle: "Relieved of shoulder pains",
+                  quote: "I have been suffering from lower back and shoulder pains for 10 years. After I use the Hydragun for 10 minutes, I get instant relief. It is important to realize that you don&apos;t have to suffer in pain.",
+                  imgUrl: "https://assets.website-files.com/5f47c76e0747d1dab44d8e4e/6181f68193b6576cb47e0911_Chris%20-%20Shoulder%20Pains4.jpg",
+                  "ytUrl": "nb95yZyq6gA",
+                },
+              ]
+            }
+            '
+          >
+            <ul class="splide__list">
+              <template x-for="quote in cxQuotes">
+                <li class="splide__slide tablet:px-4">
+                  <div class="youtube-player" :data-id="quote.ytUrl"></div>
+                  <div class="py-8 px-4">
+                    <h3
+                      class="hy-font-bolded text-2xl"
+                      x-text="quote.cxName"
+                    ></h3>
+                    <p class="mb-5 text-xs" x-text="quote.cxTitle"></p>
+                    <p class="italic" x-text="quote.quote"></p>
+                  </div>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <!--  for splide__arrows -->
+          <div
+            class="splide__arrows z-10 col-span-4 col-start-1 row-start-3 flex h-0 justify-between mix-blend-difference"
+          >
+            <button class="splide__arrow splide__arrow--prev tablet:-ml-8">
+              <svg
+                class="h-10 w-10 fill-white"
+                fill="currentColor"
+                viewbox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <button class="splide__arrow splide__arrow--next tablet:-mr-8">
+              <svg
+                class="h-10 w-10 fill-white"
+                fill="currentColor"
+                viewbox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var cxSplide = new Splide(".splide-cx-quote", {
+          classes: {
+            arrows: "splide__arrows",
+            arrow: "splide__arrow",
+            prev: "splide__arrow--prev",
+            next: "splide__arrow--next",
+          },
+          rewind: true,
+          perPage: 3,
+          breakpoints: {
+            767: {
+              perPage: 1,
+            },
+            991: {
+              perPage: 2,
+            },
+          },
+        });
+        cxSplide.on("pagination:mounted", function (data) {
+          // You can add your class to the UL element
+          const newPaginationCont = document.querySelector(
+            ".ref--pagination__cont-cx"
+          );
+          data.list.classList.add("splide__pagination--custom");
+
+          // `items` contains all dot items
+          data.items.forEach(function (item) {
+            newPaginationCont.append(item.button);
+            // item.button.textContent = String(item.page + 1);
+          });
+        });
+        cxSplide.mount();
+      });
+    </script>
+
+    <!-- END: HEAR FROM OUR CX -->
+
+    <!-- FAQ -->
+    <div class="ref--prod-faq text-hydragun-black bg-white">
+      <div class="mx-auto max-w-7xl px-6 py-12 desktop:px-10 desktop:py-24">
+        <h2
+          class="mb-8 text-center text-2xl font-bold tracking-tighter tablet:text-3xl desktop:text-left"
+        >
+          Frequently Asked Questions
+        </h2>
+
+        <div
+          class=""
+          x-data="
+    { 
+      active: [],
+      faqs: [
+        {
+          question: 'How long will it take to receive my Hydragun?',
+          answer: '<p>For orders in,<br>Singapore: 1-2 business days.<br>Hong Kong: 2-5 business days<br>Australia: 4-7 business days<br>United States: 3-6 business days<br>Canada: 3-6 business days<br>Europe: 3-6 business days<br>United Kingdom: 4-5 business days<br>Worldwide: 7-9 business days.</p>',
+        },
+        {
+          question: 'Where does HYDRAGUN ship from?',
+          answer: 'Hydragun is shipped from Singapore and Farmingdale, New York',
+        },
+        {
+          question: 'Which countries does HYDRAGUN ship to?',
+          answer: '<em>Use CTRL+F (CMD+F for Mac) to search for your country:</em><br><br>Austria, Belgium, Bulgaria, Croatia, Cyprus, Denmark, Estonia, Finland, France, Germany, Greece, Vatican City, Hungary, Ireland, Italy, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, Switzerland, Ukraine, Czechia, Malaysia, Indonesia, Thailand, China, Taiwan, India, Philippines, Vietnam, Japan, Brunei, Macau, United Arab Emirates, Mexico, Bangladesh, Cambodia, Fiji, Laos, Maldives, Nepal, Mongolia, Myanmar, Pakistan, Papua New Guinea, Sri Lanka, Argentina, Bolivia, Brazil, Chile, Colombia, Ecuador, French Guiana, Guyana, Paraguay, Peru, Suriname, Uruguay, Venezuela, South Africa, Australia, New Zealand',
+        },
+        {
+          question: 'How much is shipping?',
+          answer: 'We ship internationally worldwide. You can check shipping costs to your country after entering your location details at checkout. ',
+        },
+        {
+          question: 'How long will it take for an order to be processed?',
+          answer: 'Typically, we process the orders every day at 2pm to be shipped out next business day.<br>&zwj;<br>You will receive an email confirming your purchase, and once the shipment has been picked up, you will receive a tracking number.',
+        },
+      ]
+    }"
+        >
+          <template x-for="(faq, index) in faqs">
+            <div
+              x-data="{
+                id: index,
+                get expanded() {
+                    return this.active === this.id
+                },
+                set expanded(value) {
+                    this.active = value ? this.id : null
+                },
+            }"
+              role="region"
+              class="mb-2 bg-gray-200"
+            >
+              <h2>
+                <button
+                  @click="expanded = !expanded"
+                  :aria-expanded="expanded"
+                  class="flex w-full items-center justify-between px-6 py-3"
+                >
+                  <span class="text-left" x-text="faq.question"></span>
+                  <span x-show="expanded" aria-hidden="true" class="ml-4"
+                    >&minus;</span
+                  >
+                  <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                    >&plus;</span
+                  >
+                </button>
+              </h2>
+
+              <div x-show="expanded" x-transition x-collapse>
+                <div class="bg-white py-4 px-8" x-html="faq.answer"></div>
+              </div>
+            </div>
+          </template>
+
+          <div
+            x-data="{
+        id: 4320,
+        get expanded() {
+            return this.active === this.id
+        },
+        set expanded(value) {
+            this.active = value ? this.id : null
+        },
+        }"
+            role="region"
+            class="mb-2 bg-gray-200"
+          >
+            <h2>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex w-full items-center justify-between px-6 py-3"
+              >
+                <span class="text-left"
+                  >Can I return or exchange my Hydragun?</span
+                >
+                <span x-show="expanded" aria-hidden="true" class="ml-4"
+                  >&minus;</span
+                >
+                <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                  >&plus;</span
+                >
+              </button>
+            </h2>
+
+            <div x-show="expanded" x-transition x-collapse>
+              <div class="bg-white py-4 px-8">
+                <p class="hjkuqzo-2">
+                  Our devices are designed to stand the test of time and we
+                  stand behind each and every one of them. That said, if there’s
+                  something you’re unhappy with when you receive your Hydragun,
+                  reach out to our support team at
+                  <a
+                    class="hover:text-hydragun-red underline"
+                    href="mailto:support@hydragun.com"
+                    >support@hydragun.com</a
+                  >
+                  and we’ll help you out.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+        id: 4321,
+        get expanded() {
+            return this.active === this.id
+        },
+        set expanded(value) {
+            this.active = value ? this.id : null
+        },
+        }"
+            role="region"
+            class="mb-2 bg-gray-200"
+          >
+            <h2>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex w-full items-center justify-between px-6 py-3"
+              >
+                <span class="text-left"
+                  >What are the specifications of Hydragun?</span
+                >
+                <span x-show="expanded" aria-hidden="true" class="ml-4"
+                  >&minus;</span
+                >
+                <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                  >&plus;</span
+                >
+              </button>
+            </h2>
+
+            <div x-show="expanded" x-transition x-collapse>
+              <div class="bg-white py-4 px-8">
+                <p class="hjkuqzo-2">
+                  Sound level: 30-50dB<br />Max speed: 3200RPM<br />Weight: 2.3
+                  lbs or 1.04 kg<br />Stall force: approx. 40lbs<br />Battery
+                  capacity: 2600 mAh (approx. 3-6 hours)<br />Build material:
+                  Aerospace-grade Aluminium chassis<br />
+                  Amplitude: 12mm
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+        id: 4322,
+        get expanded() {
+            return this.active === this.id
+        },
+        set expanded(value) {
+            this.active = value ? this.id : null
+        },
+        }"
+            role="region"
+            class="mb-2 bg-gray-200"
+          >
+            <h2>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex w-full items-center justify-between px-6 py-3"
+              >
+                <span class="text-left">What plug does Hydragun use?</span>
+                <span x-show="expanded" aria-hidden="true" class="ml-4"
+                  >&minus;</span
+                >
+                <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                  >&plus;</span
+                >
+              </button>
+            </h2>
+
+            <div x-show="expanded" x-transition x-collapse>
+              <div class="bg-white py-4 px-8">
+                <p class="hjkuqzo-2">
+                  For orders in the US, Hydragun comes with a US Plug.<br />For
+                  orders worldwide, Hydragun comes with a 3-pin AC adapter (UK
+                  plug)<br />Input: 100 - 240VAC (0.5A Max).<br />Output:
+                  DC25.2V (800mA)<br />&zwj;<br /><strong
+                    >For countries outside of US that do not use UK plugs, we
+                    will include a free universal adapter (worth $8) with every
+                    purchase.</strong
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+        id: 4323,
+        get expanded() {
+            return this.active === this.id
+        },
+        set expanded(value) {
+            this.active = value ? this.id : null
+        },
+        }"
+            role="region"
+            class="mb-2 bg-gray-200"
+          >
+            <h2>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex w-full items-center justify-between px-6 py-3"
+              >
+                <span class="text-left"
+                  >What payment methods are available?</span
+                >
+                <span x-show="expanded" aria-hidden="true" class="ml-4"
+                  >&minus;</span
+                >
+                <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                  >&plus;</span
+                >
+              </button>
+            </h2>
+
+            <div x-show="expanded" x-transition x-collapse>
+              <div class="bg-white py-4 px-8">
+                We are powered by Paypal Express checkout. We accept Visa and
+                Mastercard credit and debit cards.
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+        id: 4324,
+        get expanded() {
+            return this.active === this.id
+        },
+        set expanded(value) {
+            this.active = value ? this.id : null
+        },
+        }"
+            role="region"
+            class="mb-2 bg-gray-200"
+          >
+            <h2>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex w-full items-center justify-between px-6 py-3"
+              >
+                <span class="text-left">Can I use other payment methods?</span>
+                <span x-show="expanded" aria-hidden="true" class="ml-4"
+                  >&minus;</span
+                >
+                <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                  >&plus;</span
+                >
+              </button>
+            </h2>
+
+            <div x-show="expanded" x-transition x-collapse>
+              <div class="bg-white py-4 px-8">
+                <p class="hjkuqzo-2">
+                  We only offer PayPal in our Australia, Hong Kong and Worldwide
+                  websites. If you are from Singapore and wish to pay with
+                  Paypal, please contact us at
+                  <a
+                    class="hover:text-hydragun-red underline"
+                    href="mailto:support@hydragun.com"
+                    ><strong>support@hydragun.com</strong></a
+                  >
+                  and our Customer Care Specialists will assist you.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+        id: 4325,
+        get expanded() {
+            return this.active === this.id
+        },
+        set expanded(value) {
+            this.active = value ? this.id : null
+        },
+        }"
+            role="region"
+            class="mb-2 bg-gray-200"
+          >
+            <h2>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex w-full items-center justify-between px-6 py-3"
+              >
+                <span class="text-left"
+                  >Can you charge me in my local currency?</span
+                >
+                <span x-show="expanded" aria-hidden="true" class="ml-4"
+                  >&minus;</span
+                >
+                <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                  >&plus;</span
+                >
+              </button>
+            </h2>
+
+            <div x-show="expanded" x-transition x-collapse>
+              <div class="bg-white py-4 px-8">
+                <p class="hjkuqzo-2">
+                  We only accept the local currency of our checkout pages (HKD
+                  for hydragun.hk, SGD for hydragun.com, AUD for hydragun.com.au
+                  and USD for hydragun.com). We don't have alternative currency
+                  options at the moment.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            x-data="{
+        id: 4326,
+        get expanded() {
+            return this.active === this.id
+        },
+        set expanded(value) {
+            this.active = value ? this.id : null
+        },
+        }"
+            role="region"
+            class="mb-2 bg-gray-200"
+          >
+            <h2>
+              <button
+                @click="expanded = !expanded"
+                :aria-expanded="expanded"
+                class="flex w-full items-center justify-between px-6 py-3"
+              >
+                <span class="text-left">Do you have any physical stores?</span>
+                <span x-show="expanded" aria-hidden="true" class="ml-4"
+                  >&minus;</span
+                >
+                <span x-show="!expanded" aria-hidden="true" class="ml-4"
+                  >&plus;</span
+                >
+              </button>
+            </h2>
+
+            <div x-show="expanded" x-transition x-collapse>
+              <div class="bg-white py-4 px-8">
+                <p class="hjkuqzo-2">
+                  We do not have a physical store and are not listed on other
+                  sites at the moment. HYDRAGUN is only available on our
+                  official websites. However , we do have a 30 days love it or
+                  return it guarantee for those who wish to try the HYDRAGUN
+                  experience for themselves.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END: FAQ -->
+
+    <!-- youtube lite embeds script -->
+    <script>
+      function labnolIframe(e) {
+        var t = document.createElement("iframe");
+        t.setAttribute(
+          "src",
+          "https://www.youtube.com/embed/" + e.dataset.id + "?autoplay=1&rel=0"
+        ),
+          t.setAttribute("frameborder", "0"),
+          t.setAttribute("allowfullscreen", "1"),
+          t.setAttribute(
+            "allow",
+            "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          ),
+          e.parentNode.replaceChild(t, e);
+      }
+      function initYouTubeVideos() {
+        for (
+          var e = document.getElementsByClassName("youtube-player"), t = 0;
+          t < e.length;
+          t++
+        ) {
+          var a = e[t].dataset.id,
+            r = document.createElement("div");
+          r.setAttribute("data-id", a);
+          var i = document.createElement("img");
+          i.setAttribute("loading", "lazy");
+          (i.src = "https://i.ytimg.com/vi/ID/hqdefault.jpg".replace("ID", a)),
+            r.appendChild(i);
+          var n = document.createElement("div");
+          n.setAttribute("class", "play"),
+            r.appendChild(n),
+            (r.onclick = function () {
+              labnolIframe(this);
+            }),
+            e[t].appendChild(r);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", initYouTubeVideos);
+    </script>
+    <!-- END: youtube lite embeds script -->
+  </body>
+</html>

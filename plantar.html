@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/tailwind.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="tailwind.config.js"></script>
+    <!-- splide carousel -->
+    <link rel="stylesheet" href="assets/splide-core.min.css" />
+    <script defer src="assets/splide.min.js"></script>
+    <style>
+      .splide__pagination__page {
+        margin: 0 4px;
+        background: gray;
+        opacity: 0.5;
+        border-radius: 50%;
+        height: 12px;
+        width: 12px;
+      }
+      .splide__pagination__page.is-active {
+        opacity: 0.8;
+      }
+      @media screen and (min-width: 1024px){
+        .gradientBg{
+          background-image: linear-gradient(to right, rgba(225,225,225,1), rgba(225,225,225,0)), url(assets/images/shutterstock.png);
+        }
+      }
+    </style>
+    <!-- END: splide carousel -->
+    <!-- alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@aerni/alpine-resize@1.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <!-- END: alpine.js -->
+    <title>Page</title>
+  </head>
+  <body class="font-main">
+
+    <!-- top header section -->
+	<div class="relative text-white flex justify-center items-center bg-[#303030]">
+		<div class="hy-font-bolded text-sm ">4-7 business days free shipping within Australia</div>
+		<img class="absolute right-3" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244cf24ff4b3384aebd971a_close%20btn.png">
+	</div>
+  <!-- header section -->
+  <div class="headerNav static">
+	<div class="h-14 sm:h-20 bg-white flex justify-between items-center relative">
+		<div class="hidden lg:flex items-center ml-5"><button
+				class="w-20 h-10 border hy-font-bolded border-gray-600">Shop</button></div>
+		<div class="flex items-center lg:hidden">
+      <img class="w-7 h-5 sm:w-10 sm:h-7 ml-5" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244cfc44d71a1054ae6010d_hamburger.png">
+		</div>
+    <div class="flex items-center lg:hidden">
+      <img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d4a01c0c9948981da207_logo.png" class="w-[120px] mr-5 sm:w-full"></div>
+		<div class="hidden lg:flex items-center">
+			<p class="text-lg hy-font-bolded text-zinc-500 pr-10">Learn</p>
+			<p class="text-lg hy-font-bolded text-zinc-500 pr-10 xl:pr-[150px]">Reviews</p>
+			<div class="pr-10"><img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d1a82ccfdacbd526e075_singapore.png"></div>
+			<div class="pr-10 relative">
+				<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d023db986f0cb1ac259f_cart.png">
+				<div
+					class="absolute bottom-3 left-5 text-xs bg-red-600 rounded-full p-1 w-5 h-5 text-center text-white">
+					<p class="">5</p>
+				</div>
+			</div>
+		</div>
+		<div class="flex lg:hidden items-center">
+			<div class="absolute right-10">
+				<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d023db986f0cb1ac259f_cart.png">
+				<div
+					class="absolute bottom-3 left-5 text-xs bg-red-600 rounded-full p-1 w-5 h-5 text-center text-white">
+					<p class="">5</p>
+				</div>
+			</div>
+		</div>
+	</div>
+  <div class="absolute hidden lg:flex justify-center top-12 left-0 w-full">
+    <svg
+            class="text-hydragun-black h-6 tablet:h-8"
+            fill="none"
+            viewBox="0 0 1434 182"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M116.07 6.19V75.68H38.29V6.19H0V178.51H38.29V105.94H116.07V178.51H154.36V6.19H116.07Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M293.55 6.19L256.21 78.52H254.31L235.88 41.88L217.44 6.19H172.05L236.11 112.56V178.51H274.4V112.56L338.7 6.19H293.55Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M396.37 145.65H424.5C454.5 145.65 469.64 127.65 469.64 91.75C469.64 56.53 454.52 39.04 424.5 39.04H396.37V145.65ZM358.08 178.51V6.19H430.41C455.7 6.19 475.08 13.99 488.79 29.59C502.79 45.19 509.59 66.22 509.59 92.46C509.59 118.7 502.74 139.46 488.79 155.1C475.08 170.7 455.7 178.51 430.41 178.51H358.08Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M573.17 86.32H607.44C624.44 86.32 634.44 77.1 634.44 62.21C634.44 46.84 625.93 39.04 608.67 39.04H573.17V86.32ZM534.88 178.51V6.19H620.21C655.43 6.19 675.03 25.57 675.03 57.44C675.03 76.59 664.86 91.71 648.79 99.99V101.88C664.63 106.13 672.43 117.48 672.43 135.88V157.88C672.43 167.1 673.373 173.957 675.26 178.45H636.03C634.37 174.9 633.42 168.04 633.42 157.45V141.63C633.42 126.27 627.51 118.94 609.79 118.94H573.17V178.51H534.88Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M761.24 99.56L778.03 46.14H779.44L795.28 99.56L801.9 119.17H754.62L761.24 99.56ZM755.8 6.19L695.03 178.51H734.5L744.67 148.51H811.57L821.49 178.51H863.33L800.23 6.19H755.8Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M1107.14 6.19H1145.2V110.19C1145.2 133.12 1158.67 146.83 1181.6 146.83C1204.29 146.83 1218 133.83 1218 110.19V6.19H1256.03V112.56C1256.03 133.83 1249.17 150.56 1235.7 162.67C1222.23 174.78 1204.26 180.87 1181.33 180.87C1132.4 180.87 1107.11 154.39 1107.11 112.56L1107.14 6.19Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M1395.24 6.19V75.68L1397.36 125.09H1395.94L1326.45 6.19H1282.25V178.51H1320.54V108.07L1318.18 60.55H1319.83L1388.85 178.51H1433.06V6.19H1395.24Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M1052.66 87.69H1016.92V135.35C1009.34 144 994.3 147.35 980.12 147.35C965.04 147.35 954.43 142.48 946.31 132.73C938.19 122.98 934.11 109.23 934.11 91.46C934.11 73.5267 938.213 59.6267 946.42 49.76C954.63 39.89 964.8 34.95 978.95 34.95C988.637 34.95 997.117 37.2333 1004.39 41.8C1010.59 45.7649 1015.39 51.5645 1018.13 58.39H1018.78L1053.56 48.65C1050.3 40.0005 1045.56 31.9818 1039.56 24.95L1039.47 24.85C1039.2 24.54 1038.94 24.23 1038.66 23.93C1035.07 19.9082 1031.01 16.3265 1026.58 13.26C1013.72 4.42 997.757 0 978.69 0C960.94 0 946.45 3.89 933.2 11.66C920.181 19.2058 909.684 30.4333 903.03 43.93C896.17 57.67 892.737 73.5067 892.73 91.44C892.73 118.773 900.527 140.673 916.12 157.14C931.71 173.64 954.98 181.88 981.63 181.88C1017.78 181.88 1044.92 163.83 1052.63 151.27L1052.66 87.69Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M973.2 80C973.2 80 940.67 91 908.98 91C877.29 91 858.26 80.15 858.26 80.15V118.65C858.26 118.65 877.26 129.5 908.98 129.5C940.7 129.5 973.2 118.5 973.2 118.5C973.2 118.5 1005.72 107.5 1037.41 107.5C1069.1 107.5 1088.13 118.35 1088.13 118.35V79.85C1088.13 79.85 1069.13 69 1037.41 69C1005.69 69 973.2 80 973.2 80Z"
+              fill="#BE0A0A"
+            ></path>
+          </svg>
+  </div>
+
+  </div>
+  <!-- hero section -->
+	<div class="relative flex flex-col justify-center items-center h-[800px] md:h-[600px] bg-[url(https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d000998cd1f80923177a_hero.png)] bg-center bg-cover">
+		<div class="text-5xl sm:text-7xl lg:text-8xl text-center px-12 hy-font-bolded text-white">Percussive Therapy:</div>
+		<div class="text-3xl sm:text-4xl lg:text-5xl text-center px-12 hy-font-bolded text-white pt-6">The Best Way To
+			Relieve<br class="block lg:hidden"/> Plantar
+			Fasciitis Pain</div>
+	</div>
+	<div class="bg-gray-200 relative flex flex-col-reverse md:flex-row justify-center items-center">
+		<div class="hy-container max-w-xl pb-[80px] md:max-w-2xl md:pr-[200px] lg:max-w-3xl lg:-mt-[100px] lg:pr-0">
+			<div class="text-black text-3xl hy-font-bolded">What is <span class="text-red-600">Plantar
+					Fascitis</span><span>?</span></div>
+			<div class="text-2xl text-gray-500 pt-8">Plantar fasciitis is one of the leading foot conditions around the
+				world, with millions of people being diagnosed with it each year.</div>
+			<div class="text-2xl text-gray-500 pt-8">It is a foot condition that develops when repeated activities put a
+				strain and causes inflammation of the plantar fascia, a thick band of tissue that supports the arch of
+				the foot.</div>
+		</div>
+		<img class="max-w-[280px] -mt-[105px] pb-[60px] relative md:max-w-[497px] md:-ml-[400px] md:mt-[150px] 
+		lg:-mt-[137px] lg:max-w-[680px] lg:-ml-[200px]"
+			src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244fc3cfbf95f5e35fd211d_foot.png">
+	</div>
+
+<!-- image section  -->
+  <div class="bg-white flex flex-col items-center">
+		<div class="text-gray-500 text-center text-2xl sm:max-w-[626px] md:max-w-[1232px] hy-container">Plantar fasciitis tends to be most
+			common in athletes
+			who run and jump a lot, people who have occupations that require them to be on their feet all day, including
+			police officers, cashiers or restaurant workers, or people who undergo sudden weight gain.</div>
+		<div class="flex justify-center p-6 sm:pb-20 flex-wrap 2xl:max-w-[1232px]">
+			<div class="pr-2 py-2 sm:w-1/4 w-2/4 sm:px-4">
+				<img class="border rounded-[10px]" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244c900ec8e23072c3d264f_people1.png">
+			</div>
+			<div class="pl-2 py-2 sm:w-1/4 w-2/4 sm:px-4">
+				<img class="border rounded-[10px]" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244c9318c5a05ff829bb3e1_people2.png">
+			</div>
+			<div class="pr-2 py-2 sm:w-1/4 w-2/4 sm:px-4">
+				<img class="border rounded-[10px]" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244c9602ccfda65df21b9ad_people3.png">
+			</div>
+			<div class="pl-2 py-2 sm:w-1/4 w-2/4 sm:px-4">
+				<img class="border rounded-[10px]" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244c9a2fe4d9e602add8432_people4.png">
+			</div>
+		</div>
+	</div>
+  
+<!-- symptoms section  -->
+<div class="flex bg-[#BE0A0A] flex-col items-center sm:flex-row sm:justify-center p-6">
+  <div class="w-full md:w-1/2 lg:w-[453px] flex justify-center">
+    <img class="rounded-xl" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d2a976e3aed99a1405b6_symptoms.png" />
+  </div>
+  <div class="w-full md:w-2/4 lg:w-[779px] hy-container">
+    <div class="text-white hy-font-bolded text-center sm:text-left pt-10 sm:pt-0 text-3xl">Symptoms</div>
+    <div class="text-white text-xl lg:text-2xl pt-10 sm:pt-5 lg:pt-10">Common symptoms include feeling a
+      stabbing pain on the underside of
+      your heel, and a feeling of tightness or tenderness along the arch of your foot.</div>
+    <div class="text-white text-xl lg:text-2xl pt-10 sm:pt-5 lg:pt-10">The pain tends to be the worst in the
+      morning when stepping out of
+      bed and taking the first few steps, or after standing/walking for long periods of time.</div>
+  </div>
+</div>
+
+<!-- treatment section  -->
+<div class="flex flex-col items-center">
+  <div class="hy-font-bolded text-3xl px-11 sm:max-w-626 text-white text-gray-800 pt-[60px] md:pt-[80px] text-center 
+  lg:text-4xl lg:pt-[120px]">
+    Common <span class="text-red-600">Treatment</span> Options</div>
+  <div class="text-xl text-gray-500  text-center px-11 py-5 lg:py-0 sm:px-0 sm:max-w-626 lg:max-w-full lg:text-2xl lg:py-10">Treatment
+    options for
+    plantar fasciitis can be broadly
+    classified under 4 categories.</div>
+  <div class="flex justify-between w-full flex-col lg:flex-row px-11 md:px-16 pb-5 xl:w-[1360px]">
+    <div class="px-1 md:px-2.5 w-full flex flex-col lg:pb-0
+    md:flex-row lg:flex-col lg:w-1/4 lg:block sm:border-b md:border-none sm:pb-10 sm:pt-10">
+      <div class="rounded-xl w-full md:w-1/2 lg:w-full">
+        <img class="rounded-xl w-full" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d24e7147589c448f8e43_nsaisa.png" />
+        <div class="text-gray-600 max-w-280 hy-font-bolded text-2xl pt-5">NSAIDs (non-steroidal anti-inflammatory drug)
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-full lg:hidden">
+        <div class="text-gray-500 py-5 sm:py-0 lg:py-5 sm:border-b  sm:pb-5 border-gray-200 md:ml-7">
+          <div class="text-2xl hy-font-bolded">Pros:</div>
+          <div class="ml-8 text-xl">
+            <ul class="list-disc list-outside">
+              <li>Provides effective, immediate pain relief by reducing inflammation of plantar fascia
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-red-500 pb-[60px] sm:py-5 md:border-b border-gray-200 md:ml-7">
+          <div class="text-2xl hy-font-bolded">Cons:</div>
+          <div class="ml-8 text-xl">
+            <ul class="list-disc list-outside">
+              <li>Side effects: heartburn, nausea, hypertension</li>
+              <li> Does not address root of the problem</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="px-1 md:px-2.5 w-full flex flex-col lg:pb-0
+    md:flex-row lg:flex-col lg:w-1/4 lg:block sm:border-b md:border-none sm:pb-10 sm:pt-10">
+      <div class="rounded-xl w-full md:w-1/2 lg:w-full">
+        <img class="rounded-xl w-full" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d1cb998cd136b4253e81_Doctor.png" />
+        <div class="text-gray-600 max-w-280 hy-font-bolded text-2xl pt-5">Surgery</div>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-full lg:hidden">
+        <div class="text-gray-500 py-5 sm:py-0 lg:py-5 sm:border-b sm:pb-5 border-gray-200 md:ml-7">
+          <div class="text-2xl hy-font-bolded">Pros:</div>
+          <div class="ml-8 text-xl">
+            <ul class="list-disc list-outside">
+              <li>Best for more serious cases of plantar fasciitis</li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-red-500 pb-[60px] sm:py-5  md:border-b border-gray-200 md:ml-7">
+          <div class="text-2xl hy-font-bolded">Cons:</div>
+          <div class="ml-8 text-xl">
+            <ul class="list-disc list-outside">
+              <li>May not fix the problem</li>
+              <li>May result in numbness, nerve damage, scarring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="px-1 md:px-2.5 w-full flex flex-col lg:pb-0
+    md:flex-row lg:flex-col lg:w-1/4 lg:block sm:border-b md:border-none sm:pb-10 sm:pt-10">
+      <div class="rounded-xl w-full md:w-1/2 lg:w-full">
+        <img class="rounded-xl w-full" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d279f0e9a622351d64ab_orthotic.png" />
+        <div class="text-gray-600 max-w-280 hy-font-bolded text-2xl pt-5">Orthotic Footwear</div>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-full lg:hidden">
+        <div class="text-gray-500 py-5 sm:py-0 lg:py-5 sm:border-b sm:pb-5 border-gray-200 md:ml-7">
+          <div class="text-2xl hy-font-bolded">Pros:</div>
+          <div class="ml-8 text-xl">
+            <ul class="list-disc list-outside">
+              <li>Fixes root of problem by reducing stress on foot</li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-red-500 pb-[60px] sm:py-5  md:border-b border-gray-200 md:ml-7">
+          <div class="text-2xl hy-font-bolded">Cons:</div>
+          <div class="ml-8 text-xl">
+            <ul class="list-disc list-outside">
+              <li>Does not provide targeted, immediate pain relief</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="px-1 md:px-2.5 w-full flex flex-col lg:pb-0
+    md:flex-row lg:flex-col lg:w-1/4 lg:block sm:border-b md:border-none sm:pb-10 sm:pt-10">
+      <div class="rounded-xl w-full md:w-1/2 lg:w-full">
+        <img class="rounded-xl w-full" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d2d2ff4b333ecec10e10_Therapy.png" />
+        <div class="text-gray-600 max-w-280 hy-font-bolded text-2xl pt-5">Physical Therapy</div>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-full lg:hidden">
+        <div class="text-gray-500 py-5 sm:py-0 lg:py-5 sm:border-b sm:pb-5 border-gray-200 md:ml-7">
+          <div class="text-2xl hy-font-bolded">Pros:</div>
+          <div class="ml-8 text-xl">
+            <ul class="list-disc list-outside">
+              <li>Helps to loosen tight muscles which may be directly causing the pain</li>
+              <li>Provides immediate pain relief</li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-red-500 pb-[60px] sm:py-5  md:border-b border-gray-200 md:ml-7">
+          <div class="text-2xl hy-font-bolded">Cons:</div>
+          <div class="ml-8 text-xl">
+            <ul class="list-disc list-outside">
+              <li>Inconvenient to perform regularly</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hidden lg:flex justify-between w-full text-gray-500 py-5 lg:py-0 border-t border-gray-200 xl:max-w-[1232px]">
+    <div class="w-80 pt-2 mx-2.5 ">
+      <div class="max-w-280">
+        <div class="text-2xl hy-font-bolded">Pros:</div>
+        <div class="ml-8 text-xl">
+          <ul class="list-disc list-outside">
+            <li>Provides effective, immediate pain relief by reducing inflammation of plantar fascia
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="w-80 pt-2 mx-2.5">
+      <div class="max-w-280">
+        <div class="text-2xl hy-font-bolded">Pros:</div>
+        <div class="ml-8 text-xl">
+          <ul class="list-disc list-outside">
+            <li>Best for more serious cases of plantar fasciitis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="w-80 pt-2 mx-2.5">
+      <div class="max-w-280">
+        <div class="text-2xl hy-font-bolded">Pros:</div>
+        <div class="ml-8 text-xl">
+          <ul class="list-disc list-outside">
+            <li>Fixes root of problem by reducing stress on foot</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="w-80 pt-2 mx-2.5">
+      <div class="max-w-280">
+        <div class="text-2xl hy-font-bolded">Pros:</div>
+        <div class="ml-8 text-xl">
+          <ul class="list-disc list-outside">
+            <li>Helps to loosen tight muscles which may be directly causing the pain</li>
+            <li>Provides immediate pain relief</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hidden lg:flex  w-full justify-between text-red-600 pt-5  border-t border-gray-200 lg:pt-0 pb-24 xl:max-w-[1232px]">
+    <div class="w-80 pt-2 mx-2.5 ">
+      <div class=" max-w-280">
+        <div class="text-2xl hy-font-bolded">Cons:</div>
+        <div class="ml-8 text-xl">
+          <ul class="list-disc list-outside">
+            <li>Side effects: heartburn, nausea, hypertension</li>
+            <li> Does not address root of the problem</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="w-80 pt-2 mx-2.5">
+      <div class="max-w-280">
+        <div class="text-2xl hy-font-bolded">Cons:</div>
+        <div class="ml-8 text-xl">
+          <ul class="list-disc list-outside">
+            <li>May not fix the problem</li>
+            <li>May result in numbness, nerve damage, scarring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="w-80 pt-2 mx-2.5">
+      <div class="max-w-280">
+        <div class="text-2xl hy-font-bolded">Cons:</div>
+        <div class="ml-8 text-xl">
+          <ul class="list-disc list-outside">
+            <li>Does not provide targeted, immediate pain relief</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="w-80 pt-2 mx-2.5">
+      <div class="max-w-280 ">
+        <div class="text-2xl hy-font-bolded">Cons:</div>
+        <div class="ml-8 text-xl">
+          <ul class="list-disc list-outside">
+            <li>Inconvenient to perform regularly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-gray-200 lg:bg-linear-grey py-0 w-full text-black justify-end items-center text-2xl flex flex-wrap">
+    <div class="lg:w-1/2 w-full lg:max-w-[552px] text-gray-500 hy-container lg:py-0">
+      <div class="abosulte lg:right-0">
+      <p class="lg:max-w-552">Out of the 4 options, we believe that the ideal treatment includes a combination
+        of
+        physical therapy, which provides non-invasive, immediate pain relief, and orthotics, which reduces
+        the pressure on the foot and fixes the root of the problem.</p>
+      <p class="lg:max-w-552 mt-16">Podiatrists (foot doctors), physiotherapists and chiropractors often
+        recommend physical therapy, in the form of stretching & strengthening exercises. But visiting your
+        physiotherapist or chiropractor, or performing these exercises at home regularly, can be a huge
+        hassle. If you are unable to undergo physical therapy regularly, it may severely reduce the
+        effectiveness of the treatment.</p>
+      </div>
+    </div>
+    <div class="lg:w-1/2 w-full gradientBg     
+    lg:h-[672px] lg:bg-cover">
+      <img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d1fb8c5a05dc4ca3a51e_shutterstock.png"  class="lg:hidden"/>
+    </div>
+  </div>
+</div>
+
+<!-- question section  -->
+<div class="flex flex-col items-center">
+  
+  <div class="hy-font-bolded hy-container pb-0
+  md:text-4xl text-3xl text-red-700 max-w-[1232px] text-left sm:text-center">What if there was a
+    way to stretch, relax
+    and loosen your plantar fascia, without all of the hassle and costs associated with physical therapy?</div>
+    <div class="hy-container">
+  <div class="text-gray-700 hy-font-bolded md:text-4xl text-3xl sm:text-center">Percussive Therapy - An
+    Effective
+    Alternative To Manual
+    Therapy</div>
+  <div class="text-gray-500 text-xl lg:text-2xl">
+    <p class="lg:w-3/4 w-full m-auto text-left sm:text-center">Massage guns are one of the best ways to get
+      targeted and consistent
+      deep-tissue massages in a convenient manner.</p>
+  </div>
+</div>
+  <div class="px-6">
+    <img class="rounded-[10px]" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d53071475870018f8e94_therapy%20machine.png" />
+  </div>
+  <div class="text-gray-500 text-xl lg:text-2xl hy-container 
+  max-w-[1232px] text-left sm:text-center">And because they are so
+    easy to use, patients
+    suffering from plantar fasciitis find it a lot easier to persist with treatment, as compared to other forms
+    of physical therapy.</div>
+  <div class="lg:pt-30 pt-10 flex flex-col lg:flex-row justify-center w-full px-6">
+			<div class="lg:w-2/4 w-full relative sm:flex lg:pl-16 2xl:max-w-[682px]">
+				<div class="relative">
+					<p class="text-gray-600  text-2xl absolute top-0 left-3 hy-font-bolded">$100 Per Visit</p>
+					<img class="rounded-xl" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d5db2ccfda149c291245_visit.png">
+				</div>
+				<div class="lg:absolute bottom-0 right-0 mt-3 md:ml-6 md:mt-0 lg:mb-[120px]">
+					<div class="relative">
+						<p class="text-red-600  text-7xl absolute  -top-10 left-32 
+            md:-left-14 md:top-24  lg:top-12 lg:left-20 hy-font-bolded">
+							VS</p>
+						<img class="rounded-xl" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d59106f2283b196336d3_unlimited.png">
+						<p class="text-white text-2xl absolute bottom-3 right-3 hy-font-bolded">$299 unlimited</p>
+					</div>
+				</div>
+			</div>
+			<div class="lg:w-[680px] w-full hy-container">
+				<div class="text-gray-400 lg:text-2xl text-xl py-2 sm:py-5 lg:py-0 lg:max-w-552">
+					<p>The costs of visits to your local <span class="text-gray-500 hy-font-bolded">physiotherapist</span> or
+						<span class="text-gray-500 hy-font-bolded">chiropractor</span> can also add up very quickly, with
+						each visit costing approximately <span class="text-red-600 hy-font-bolded">$100</span> in the United
+						States.
+						Compare this to <span class="text-gray-500 hy-font-bolded">Hydragun</span>, which is retailing for
+						<span class="text-red-600  hy-font-bolded">$299</span> and
+						you’ll find that you can get immense cost savings if you were to be able to get pain relief from
+						using Hydragun instead of having to visit the physio/chiro.
+					</p>
+					<p class="py-10">Having your own massage gun can also be a huge plus, as you may experience foot or
+						heel pain anytime of the week and may require immediate pain relief.
+					</p>
+					<div class="text-center">
+						<button
+							class="bg-red-600 rounded-[10px] py-3 lg:py-10 px-10 lg:px-20 text-white text-2xl lg:text-30 hy-font-bolded">LEARN
+							MORE</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- work section  -->
+<div class="flex justify-center bg-gray-200 flex-col lg:flex-row">
+  <div class="text-xl lg:text-2xl text-gray-600 lg:max-w-[552px] hy-container
+  flex flex-col items-center">
+    <div class="hy-font-bolded text-3xl md:text-4xl font-alliance text-center lg:text-left">How Does <span
+        class="lg:text-red-600">Percussive
+        Therapy</span> Work?</div>
+        <br>
+    <div class="text-gray-500">Using massage guns to perform deep-tissue massages on oneself can help to loosen
+      the tendons, ligaments and fascia that become painfully tight over time.</div>
+    <div class="py-10 text-gray-500">Massages can break up the scar tissue that is caused by chronic
+      inflammation and loosen up the fibrous tissue band, allowing it to return to its natural shape.</div>
+    <div class="text-gray-500">This effectively allows percussion massage guns to replicate the same mechanism
+      that stretching exercises use to reduce inflammation and loosen the muscles and fascia, thus speeding up
+      the recovery process and alleviating pain for those suffering from plantar fasciitis.</div>
+  </div>
+  <div class="hy-container pt-0 lg:pt-24">
+    <img class="rounded-xl md:w-[90vw] lg:max-w-[682px]" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6245095ce8b844810c0db149_heel-loop-min.gif" />
+  </div>
+</div>
+<!-- Hydragun section  -->
+<div class="flex flex-col items-center">
+  <div class="hy-font-bolded lg:text-4xl text-3xl text-gray-600 sm:max-w-[626px] lg:max-w-full text-center 
+  hy-container lg:text-left font-alliance">
+    How To Use <span class="text-red-600">HYDRAGUN</span> As Part Of
+    Your <span class="text-red-600">Plantar Fasciitis Treatment</span>?</div>
+  <!-- <div class="relative mx-10 my-3 h-0 overflow-hidden" style="padding-bottom: 56.25%">
+    <iframe src="https://www.youtube.com/embed/UBOj6rqRUME" frameborder="0" allowfullscreen
+      class="absolute top-0 left-0 w-full h-full"></iframe>
+  </div> -->
+  <div class="px-6 max-w-[1236px]">
+    <img src="assets/images/usingHydragun.png" class="rounded-xl">
+  </div>
+  <div class="flex flex-col justify-center w-full md:flex-row lg:justify-between hy-container">
+    <div class="lg:px-78 sm:w-2/4 md:pr-5">
+      <div class="flex justify-start items-center pb-8">
+        <img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d32527761c94244886fe_step1.png">
+        <div class="ml-5 text-xl lg:text-2xl text-gray-600 max-w-280">Select the ball attachment head</div>
+      </div>
+      <div class="flex justify-start items-center pb-8">
+        <img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d35927761c3e4d48b324_step2.png">
+        <div class="ml-5 text-xl lg:text-2xl text-gray-600 max-w-280">Use HYDRAGUN on your
+          shin and peroneus muscles for 30 seconds</div>
+      </div>
+      <div class="flex justify-start items-center pb-8">
+        <img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d39427761c74ae48c515_step3.png">
+        <div class="ml-5 text-xl lg:text-2xl text-gray-600 max-w-280">Use HYDRAGUN on your calf for 30
+          seconds</div>
+      </div>
+    </div>
+    <div class="lg:px-78 sm:w-2/4">
+      <div class="flex justify-start items-center pb-8">
+        <img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d3dab4b36e2f7a47b5ac_step4.png">
+        <div class="ml-5 text-xl lg:text-2xl text-gray-600 max-w-280">Select the bullet attachment head
+        </div>
+      </div>
+      <div class="flex justify-start items-center pb-8">
+        <img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d3fd2ccfdae1fa280cb8_step5.png">
+        <div class="ml-5 text-xl lg:text-2xl text-gray-600 max-w-280">Use HYDRAGUN along the heel, arch and
+          ball of
+          your foot for 30-60 seconds</div>
+      </div>
+      <div class="flex justify-start items-center pb-8">
+        <img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d42c50a70918048b81e3_step6.png">
+        <div class="ml-5 text-xl lg:text-2xl text-gray-600 max-w-280">Lightly stretch your foot and rotate
+          your ankles
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hidden lg:block text-2xl text-gray-500 hy-container pt-0">Perform this massage routine for 1-3 times a day and you
+    will feel better.
+  </div>
+</div>
+<!-- why section  -->
+<div class="bg-gray-200 relative pt-20 flex justify-center flex-wrap">
+  <img class="hidden sm:block md:w-[696px] lg:w-[1020px]" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/623d4313d6af6ac4a9548a41_EDITED-6178fcbecbb1a9c36d9fec1b_Hydragun%20Attachment%20Head%20-%20Ball%20Head%201.png">
+  <div class="hy-container">
+    <img class="sm:hidden" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244cf9fa5ce184c27be6265_small-machine.png">
+  </div>
+  <div class="hy-container md:w-[500px]
+  md:absolute md:left-10 md:bottom-10 
+  xl:left-[200px]
+  2xl:abosulte 2xl:left-[500px]">
+    <div class="hy-font-bolded text-3xl lg:text-4xl mb-10">Why <span class="text-red-600">HYDRAGUN</span>?</div>
+    <div class="text-xl lg:text-2xl text-gray-500">There are dozens of massage guns in the market today, ranging
+      from the
+      most premium brands that cost up to $600, to the cheaper generic brands that can be found on Amazon.
+      <span class="text-red-600">So why choose Hydragun?</span>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col items-center justify-center px-10 md:px-0 pt-20 pb-6">
+  <div>
+    <div class="flex justify-center flex-wrap">
+      <div class="lg:mr-16 pb-6">
+        <img class="bg-color2 rounded" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d6442ccfda06fa2941d7_Quietest.png">
+      </div>
+      <div class="lg:max-w-[552px] sm:max-w-[626px] md:hy-container flex flex-col justify-center">
+        <div class="text-gray-600 hy-font-bolded text-2xl lg:text-3xl">Quietest massage gun in the market</div>
+        <div class="lg:mt-10 mt-5 text-gray-500 text-xl lg:text-2xl">At 30-50 dB, Hydragun is the quietest
+          massage gun in the
+          market today, with its SmoothDriveTM motor and sound-insulating aluminium chassis. <br>It’s so
+          quiet that you can watch the TV on the couch, or have a conversation with others, while using it
+          at the same time. Other massage gun brands are a lot noisier and may be as piercingly loud as a
+          drill, at up to 70 dB.</div>
+      </div>
+    </div>
+    <div class="flex justify-center flex-wrap mt-10">
+      <div class="lg:mr-16 pb-6">
+        <img class="bg-color2 rounded" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d66e6b57b50201baabd5_Tissue.png">
+      </div>
+      <div class="lg:max-w-[552px] sm:max-w-[626px] md:hy-container flex flex-col justify-center">
+        <div class="text-gray-600 hy-font-bolded text-2xl lg:text-3xl">Strong, Deep Tissue Massage</div>
+        <div class="lg:mt-10 mt-5 text-gray-500 text-xl lg:text-2xl">Unlike most of the cheaper, generic
+          brands selling on
+          Amazon and other online marketplaces that are retailing at $50-100, Hydragun is able to provide
+          a strong, deep-tissue massage, with up to 40 lb of stall force, a 12 mm amplitude and a speed of
+          up to 3200 RPM.</div>
+      </div>
+    </div>
+    <div class="flex justify-center flex-wrap mt-10">
+      <div class="lg:mr-16 pb-6">
+        <img class="bg-color2 rounded" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d69071475820008f8f1a_Heads.png">
+      </div>
+      <div class="lg:max-w-[552px] sm:max-w-[626px] md:hy-container flex flex-col justify-center">
+        <div class="text-gray-600 hy-font-bolded text-2xl lg:text-3xl">7 Different Attachment Heads</div>
+        <div class="lg:mt-10 mt-5 text-gray-500 text-xl lg:text-2xl">Customise your recovery with 7
+          attachment heads, including
+          the
+          <ul class="list-disc list-outside pl-10">
+            <li>Fork Head - Calves</li>
+            <li>Bullet Head - Feet</li>
+            <li>Ball Head - Shins, Calves, Feet</li>
+          </ul>
+          <br>
+          <br>
+          Massaging each of these body parts as part of your recovery routine will be great for relieving
+          plantar fasciitis related pain.
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="text-gray-600 hy-font-bolded text-3xl">As Featured By</div>
+  <div>
+    <div class="flex justify-between flex-wrap w-full">
+      <div class="lg:w-1/4 sm:w-2/4 w-full mt-10">
+        <img class="m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d10e7425af23d8bd46bf_Vogur.png">
+      </div>
+      <div class="lg:w-1/4 sm:w-2/4 w-full mt-10">
+        <img class="m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d0e227761c066046e845_forbes.png">
+      </div>
+      <div class="lg:w-1/4 sm:w-2/4 w-full mt-10">
+        <img class="m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d13e7425af1b14bd46c4_Techradar.png">
+      </div>
+      <div class="lg:w-1/4 sm:w-2/4 w-full mt-10">
+        <img class="m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d1717425af47a7bd46d3_Mens%20Journal.png">
+      </div>
+      <div class="lg:w-1/4 sm:w-2/4 w-full mt-10">
+        <img class="m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d0472ccfda6612263df5_qq.png">
+      </div>
+      <div class="lg:w-1/4 sm:w-2/4 w-full mt-10">
+        <img class="m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f6dd27761cca09673da5_Marie%20Claire.png">
+      </div>
+      <div class="lg:w-1/4 sm:w-2/4 w-full mt-10">
+        <img class="m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f6bcb4bebb8d4d96448b_finder.png">
+      </div>
+      <div class="lg:w-1/4 sm:w-2/4 w-full mt-10">
+        <img class="m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f67e4c6f8f248c7b9f92_body.png">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="flex flex-col items-center">
+
+  <div class="hy-container flex flex-col items-center pb-0">
+    <div class="text-gray-600 hy-font-bolded text-2xl lg:text-3xl">Expert Reviews</div>
+    <div class="text-gray-500 text-2xl hidden lg:block text-center mt-10">These experts have tried using
+    Hydragun on
+    their clients
+    and have seen great results! <br>Here’s what they have to say.</div>
+  </div>
+
+  <div class="ref--IG-posts flex justify-center">
+    <div class="hy-container pt-0">
+      <div class="splide-ig-card grid grid-cols-4">
+        
+        <div
+          class="ref--pagination__cont-ig col-span-4 mt-8 flex justify-center tablet:col-span-1 tablet:mt-4 tablet:items-start tablet:justify-end"
+        ></div>
+        <div
+          class="splide__track col-span-4 col-start-1 row-span-3 row-start-2"
+        >
+          <ul class="splide__list">
+            <li class="splide__slide tablet:px-4">
+              <div class="flex flex-col items-center w-full xl:max-w-[1134px]">
+                  <div class="relative my-6 max-w-full">
+                      <img src="assets/images/expertReview.png">
+                  </div>
+                
+                <div class="mt-3 px-6 text-gray-500 text-xl text-left lg:text-2xl">Watch how Dr Nick Healy
+                  uses
+                  the Hydragun to
+                  complement his
+                  chiropractic treatment for Amy’s plantar fasciitis.</div>
+              </div>
+            </li>
+            <li class="splide__slide tablet:px-4">
+              <div class="flex flex-col items-center w-full xl:max-w-[1134px]">
+                <div class="relative my-6 max-w-full">
+                    <img src="assets/images/expertReview.png">
+                </div>
+              
+              <div class="mt-3 px-6 text-gray-500 text-xl text-left lg:text-2xl">Watch how Dr Nick Healy
+                uses
+                the Hydragun to
+                complement his
+                chiropractic treatment for Amy’s plantar fasciitis.</div>
+            </div>
+            </li>
+            <li class="splide__slide tablet:px-4">
+              <div class="flex flex-col items-center w-full xl:max-w-[1134px]">
+                <div class="relative my-6 max-w-full">
+                    <img src="assets/images/expertReview.png">
+                </div>
+              
+              <div class="mt-3 px-6 text-gray-500 text-xl text-left lg:text-2xl">Watch how Dr Nick Healy
+                uses
+                the Hydragun to
+                complement his
+                chiropractic treatment for Amy’s plantar fasciitis.</div>
+            </div>
+            </li>
+            <li class="splide__slide tablet:px-4">
+              <div class="flex flex-col items-center w-full xl:max-w-[1134px]">
+                <div class="relative my-6 max-w-full">
+                    <img src="assets/images/expertReview.png">
+                </div>
+              
+              <div class="mt-3 px-6 text-gray-500 text-xl text-left lg:text-2xl">Watch how Dr Nick Healy
+                uses
+                the Hydragun to
+                complement his
+                chiropractic treatment for Amy’s plantar fasciitis.</div>
+            </div>
+            </li>
+          </ul>
+        </div>
+        <!--  for splide__arrows -->
+        <div
+          class="splide__arrows z-10 col-span-4 col-start-1 row-start-3 
+          hidden md:flex h-0 justify-between mix-blend-difference"
+        >
+          <button class="splide__arrow splide__arrow--prev tablet:-ml-8">
+            <svg
+              class="h-10 w-10 fill-gray-400 lg:-ml-8"
+              fill="currentColor"
+              viewbox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button class="splide__arrow splide__arrow--next tablet:-mr-8">
+            <svg
+              class="h-10 w-10 fill-gray-400"
+              fill="currentColor"
+              viewbox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var igSplide = new Splide(".splide-ig-card", {
+        classes: {
+          arrows: "splide__arrows",
+          arrow: "splide__arrow",
+          prev: "splide__arrow--prev",
+          next: "splide__arrow--next",
+        },
+        rewind: true,
+        perPage: 1,
+        breakpoints: {
+          767: {
+            perPage: 1,
+          },
+          991: {
+            perPage: 1,
+          },
+        },
+      });
+      igSplide.on("pagination:mounted", function (data) {
+        // You can add your class to the UL element
+        const newPaginationCont = document.querySelector(
+          ".ref--pagination__cont-ig"
+        );
+        data.list.classList.add("splide__pagination--custom");
+
+        // `items` contains all dot items
+        data.items.forEach(function (item) {
+          newPaginationCont.append(item.button);
+          // item.button.textContent = String(item.page + 1);
+        });
+      });
+      igSplide.mount();
+    });
+  </script>
+
+  <button
+  class="bg-red-600 rounded-[10px] lg:py-10 lg:px-20 py-5 px-10 text-white hy-font-bolded text-2xl lg:text-30 mb-0">LEARN
+  MORE</button>
+
+  <div class="hy-container flex flex-col items-center pb-0 mt-0">
+    <div class="text-gray-600 hy-font-bolded text-2xl lg:text-3xl text-center">Satisfied
+      Customer
+      Video
+      Testimonials</div>
+    <div class="text-gray-500 text-xl px-5 md:text-2xl lg:text-center lg:mt-10 text-left mt-5">
+      We
+      have invited these
+      happy customers (who
+      happen to suffer from plantar fasciitis) for a Zoom interview to share their experiences using
+      the
+      Hydragun.
+      Check out the interview highlights with them in the links below.</div>
+  </div>
+
+  <div class="ref--SC-posts flex justify-center">
+    <div class="hy-container pt-0">
+      <div class="splide-sc-card grid grid-cols-4">
+        
+        <div
+          class="ref--pagination__cont-sc col-span-4 mt-8 flex justify-center tablet:col-span-1 tablet:mt-4 tablet:items-start tablet:justify-end"
+        ></div>
+        <div
+          class="splide__track col-span-4 col-start-1 row-span-3 row-start-2"
+        >
+          <ul class="splide__list">
+            <li class="splide__slide tablet:px-4">
+              <div class="lg:flex lg:justify-center w-full">
+                <div class="lg:w-2/4">
+                  <img class="lg:!hidden" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f945b973593bda2e760e_Jon.png" />
+                  <img class="!hidden lg:!block lg:m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f980b97359c2852e8df1_Jon_background.png" />
+                </div>
+                <div class="lg:w-2/4 text-left hy-container lg:pt-0 flex flex-col justify-center">
+                  <div class="text-gray-600 text-2xl hy-font-bolded lg:text-3xl">Jonathon Adam</div>
+                  <div class="text-gray-500 text-xl">Recovered from plantar fascitis</div>
+                  <div class="mt-5 text-gray-500 text-xl">“There’s this sharp pain in the corner of your
+                    foot.
+                    Even just
+                    going for a walk, I’d have to stop halfway and it was really frustrating.</div>
+                  <div class="mt-6 text-gray-500 text-xl">I started seeing physios that gave me a lot of
+                    exercises to do
+                    but these pains were holding me back. I don’t experience plantar fasciitis as much using
+                    Hydragun.
+                    It does a really good job loosening up all my muscles.</div>
+                  <div class="mt-6 text-gray-500 text-xl">Very happy to say that I haven’t needed to go to
+                    the
+                    physio
+                    since I started using Hydragun”</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide tablet:px-4">
+              <div class="lg:flex lg:justify-center w-full">
+                <div class="lg:w-2/4">
+                  <img class="lg:!hidden" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f945b973593bda2e760e_Jon.png" />
+                  <img class="!hidden lg:!block lg:m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f980b97359c2852e8df1_Jon_background.png" />
+                </div>
+                <div class="lg:w-2/4 text-left hy-container lg:pt-0 flex flex-col justify-center">
+                  <div class="text-gray-600 text-2xl hy-font-bolded lg:text-3xl">Jonathon Adam</div>
+                  <div class="text-gray-500 text-xl">Recovered from plantar fascitis</div>
+                  <div class="mt-5 text-gray-500 text-xl">“There’s this sharp pain in the corner of your
+                    foot.
+                    Even just
+                    going for a walk, I’d have to stop halfway and it was really frustrating.</div>
+                  <div class="mt-6 text-gray-500 text-xl">I started seeing physios that gave me a lot of
+                    exercises to do
+                    but these pains were holding me back. I don’t experience plantar fasciitis as much using
+                    Hydragun.
+                    It does a really good job loosening up all my muscles.</div>
+                  <div class="mt-6 text-gray-500 text-xl">Very happy to say that I haven’t needed to go to
+                    the
+                    physio
+                    since I started using Hydragun”</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide tablet:px-4">
+              <div class="lg:flex lg:justify-center w-full">
+                <div class="lg:w-2/4">
+                  <img class="lg:!hidden" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f945b973593bda2e760e_Jon.png" />
+                  <img class="!hidden lg:!block lg:m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f980b97359c2852e8df1_Jon_background.png" />
+                </div>
+                <div class="lg:w-2/4 text-left hy-container lg:pt-0 flex flex-col justify-center">
+                  <div class="  text-gray-600 text-2xl hy-font-bolded lg:text-3xl">Jonathon Adam</div>
+                  <div class="text-gray-500 text-xl">Recovered from plantar fascitis</div>
+                  <div class="mt-5 text-gray-500 text-xl">“There’s this sharp pain in the corner of your
+                    foot.
+                    Even just
+                    going for a walk, I’d have to stop halfway and it was really frustrating.</div>
+                  <div class="mt-6 text-gray-500 text-xl">I started seeing physios that gave me a lot of
+                    exercises to do
+                    but these pains were holding me back. I don’t experience plantar fasciitis as much using
+                    Hydragun.
+                    It does a really good job loosening up all my muscles.</div>
+                  <div class="mt-6 text-gray-500 text-xl">Very happy to say that I haven’t needed to go to
+                    the
+                    physio
+                    since I started using Hydragun”</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide tablet:px-4">
+              <div class="lg:flex lg:justify-center w-full">
+                <div class="lg:w-2/4">
+                  <img class="lg:!hidden" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f945b973593bda2e760e_Jon.png" />
+                  <img class="!hidden lg:!block lg:m-auto" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f980b97359c2852e8df1_Jon_background.png" />
+                </div>
+                <div class="lg:w-2/4 text-left hy-container lg:pt-0 flex flex-col justify-center">
+                  <div class="  text-gray-600 text-2xl hy-font-bolded lg:text-3xl">Jonathon Adam</div>
+                  <div class="text-gray-500 text-xl">Recovered from plantar fascitis</div>
+                  <div class="mt-5 text-gray-500 text-xl">“There’s this sharp pain in the corner of your
+                    foot.
+                    Even just
+                    going for a walk, I’d have to stop halfway and it was really frustrating.</div>
+                  <div class="mt-6 text-gray-500 text-xl">I started seeing physios that gave me a lot of
+                    exercises to do
+                    but these pains were holding me back. I don’t experience plantar fasciitis as much using
+                    Hydragun.
+                    It does a really good job loosening up all my muscles.</div>
+                  <div class="mt-6 text-gray-500 text-xl ">Very happy to say that I haven’t needed to go to
+                    the
+                    physio
+                    since I started using Hydragun”</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!--  for splide__arrows -->
+        <div
+          class="splide__arrows z-10 col-span-4 col-start-1 row-start-3 hidden
+          md:flex h-0 justify-between mix-blend-difference"
+        >
+          <button class="splide__arrow splide__arrow--prev tablet:-ml-8">
+            <svg
+              class="h-10 w-10 fill-gray-400"
+              fill="currentColor"
+              viewbox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button class="splide__arrow splide__arrow--next tablet:-mr-8">
+            <svg
+              class="h-10 w-10 fill-gray-400"
+              fill="currentColor"
+              viewbox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var scSplide = new Splide(".splide-sc-card", {
+        classes: {
+          arrows: "splide__arrows",
+          arrow: "splide__arrow",
+          prev: "splide__arrow--prev",
+          next: "splide__arrow--next",
+        },
+        rewind: true,
+        perPage: 1,
+        breakpoints: {
+          767: {
+            perPage: 1,
+          },
+          991: {
+            perPage: 1,
+          },
+        },
+      });
+      scSplide.on("pagination:mounted", function (data) {
+        // You can add your class to the UL element
+        const newPaginationCont = document.querySelector(
+          ".ref--pagination__cont-sc"
+        );
+        data.list.classList.add("splide__pagination--custom");
+
+        // `items` contains all dot items
+        data.items.forEach(function (item) {
+          newPaginationCont.append(item.button);
+          // item.button.textContent = String(item.page + 1);
+        });
+      });
+      scSplide.mount();
+    });
+  </script>
+
+  <button
+  class="bg-red-600 rounded-[10px] hy-font-bolded px-10 lg:py-10 lg:px-20 py-5 text-white text-2xl lg:text-30">CHECK
+  OUT HYDRAGUN</button>
+
+  <!-- FAQ section  -->
+	<div class="flex justify-center hy-container">
+		<div class="bg-white flex flex-col items-center" x-data="{selected:1}">
+			<div class="text-gray-600 hy-font-bolded text-center lg:text-left text-2xl lg:text-3xl hy-container
+      py-0">Frequently
+				Asked
+				Questions</div>
+			<div class="max-w-[1232px] px-5 lg:px-3 mt-10">
+				<button type="button" class="w-full text-left mt-3" @click="selected !== 1 ? selected = 1 : selected = null">
+					<div class="text-xl text-gray-800 py-3 pl-3 bg-gray-200 flex justify-between items-center">
+					<div>
+						Is Hydragun safe to use?
+					</div>
+					<div class="mr-5">
+						<svg x-bind:style="selected == 1 ? 'display:block' : 'display:none'"
+						xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+							<path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
+						</svg>
+						<svg x-bind:style="selected == 1 ? 'display:none' : 'display:block'"
+						xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+							<path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+						</svg>
+					</div>	
+					</div>
+				</button>
+				<div class="relative overflow-hidden transition-all max-h-0 duration-700"  x-ref="container1"
+					x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+					<div class="text-xl text-gray-800 pl-3 py-5 md:px-10">Using Hydragun to treat plantar fasciitis is safe, easy
+						and
+						generally free of any side effects, especially when compared to over-the-counter NSAIDs and
+						surgery.
+					</div>
+				</div>
+				<button type="button" class="w-full text-left mt-3 " @click="selected !== 2 ? selected = 2 : selected = null">
+					<div class="text-xl text-gray-800 py-3 pl-3 bg-gray-200 flex justify-between items-center">
+						<div>
+						Will I feel any pain while usingHydragun?
+					</div>
+					<div class="mr-5">
+						<svg x-bind:style="selected == 2 ? 'display:block' : 'display:none'"
+						xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+							<path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
+						</svg>
+						<svg x-bind:style="selected == 2 ? 'display:none' : 'display:block'"
+						xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+							<path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+						</svg>
+					</div>
+				</div>
+				</button>
+				<div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container1"
+					x-bind:style="selected == 2 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+					<div class="text-xl text-gray-800 py-5 pl-3 md:px-10">Using Hydragun to treat plantar fasciitis is safe, easy
+						and
+						generally free of any side effects, especially when compared to over-the-counter NSAIDs and
+						surgery.
+					</div>
+				</div>
+				<button type="button" class="w-full text-left mt-3" @click="selected !== 3 ? selected = 3 : selected = null">
+					<div class="text-xl text-gray-800 py-3 pl-3 bg-gray-200 flex justify-between items-center">
+						<div>How long will it take to treat my plantar
+						fasciitis?</div>
+						<div class="mr-5">
+							<svg x-bind:style="selected == 3 ? 'display:block' : 'display:none'"
+							xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+								<path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
+							</svg>
+							<svg x-bind:style="selected == 3 ? 'display:none' : 'display:block'"
+							xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+								<path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+							</svg>
+						</div></div>
+				</button>
+				<div class="relative overflow-hidden transition-all max-h-0 duration-700"  x-ref="container1"
+					x-bind:style="selected == 3 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+					<div class="text-xl text-gray-800 py-5 pl-3 md:px-10">Using Hydragun to treat plantar fasciitis is safe, easy
+						and
+						generally free of any side effects, especially when compared to over-the-counter NSAIDs and
+						surgery.
+					</div>
+				</div>
+				<button type="button" class="w-full text-left mt-3" @click="selected !== 4 ? selected = 4 : selected = null">
+					<div class="text-xl text-gray-800 py-3 pl-3 bg-gray-200 flex justify-between items-center">
+						<div>Can Hydragun replace a Physiotherapist or
+						Chiropractor?</div>
+						<div class="mr-5">
+							<svg x-bind:style="selected == 4 ? 'display:block' : 'display:none'"
+							xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+								<path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
+							</svg>
+							<svg x-bind:style="selected == 4 ? 'display:none' : 'display:block'"
+							xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+								<path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+							</svg>
+						</div></div>
+				</button>
+				<div class="relative overflow-hidden transition-all max-h-0 duration-700" x-ref="container1"
+					x-bind:style="selected == 4 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+					<div class="text-xl text-gray-800 py-5 pl-3 md:px-10">Using Hydragun to treat plantar fasciitis is safe, easy
+						and
+						generally free of any side effects, especially when compared to over-the-counter NSAIDs and
+						surgery.
+					</div>
+				</div>
+			</div>
+			<div class="text-gray-500  text-xl lg:text-2xl lg:pb-0 text-center hy-container lg:px-3">With that said,
+				Hydragun can act as the perfect
+				complementary tool to aid in your recovery. Also, many of our customers do mention in their reviews that
+				they no longer need to go to their local physio/chiro any longer after having bought the massage gun.
+			</div>
+		</div>
+	</div>
+
+  <!-- hear section  -->
+	<div class="flex flex-col justify-center items-center hy-container pt-0">
+		<div class="text-gray-600 hy-font-bolded text-center lg:text-left text-2xl lg:text-3xl">Hear More About Hydragun -
+			From Others Suffering From Plantar
+			Fasciitis As Well</div>
+		<div class="text-gray-500 text-xl lg:text-2xl text-center mt-10">Still not convinced? Here are more written
+			testimonials &
+			reviews from happy customers.</div>
+		<div class="max-w-1232 mt-16 sm:mt-10">
+			<div class="border border-gray-200 p-4">
+				<div class="flex">
+					<div>
+						<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f9b9712b9aab3436b040_review.png">
+					</div>
+					<div class="ml-7">
+						<div class="flex items-center">
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div class="ml-3">22/01/2022</div>
+						</div>
+						<div class="py-2 flex items-center">
+							<div class="text-white bg-gray-800 py-1 px-3">Verified</div>
+							<div class="ml-2 text-gray-800 font-bold text-base">Maria Richardson</div>
+						</div>
+					</div>
+				</div>
+				<div class="hy-font-bolded text-gray-800 text-base">Very impressed. Must get if you are a heavy runner!</div>
+				<div class="text-base text-gray-500 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Phasellus luctus luctus venenatis. Ut auctor ipsum vitae arcu lobortis, eget bibendum orci aliquet.
+					Nam et mi mollis, porta dui sit amet, sodales risus. Vestibulum sagittis sed massa non mattis. Proin
+					egestas, neque vitae pharetra rutrum, mi ligula vehicula diam, nec rhoncus est dui a sapien. Fusce
+					suscipit semper felis sodales pharetra. Morbi magna enim, finibus eget nisi vel, suscipit sodales
+					risus. Maecenas pellentesque cursus nisi, non pellentesque ex cursus non. In hac habitasse platea
+					dictumst.</div>
+			</div>
+			<div class="border border-gray-200 p-4 mt-5">
+				<div class="flex">
+					<div>
+						<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f9b9712b9aab3436b040_review.png">
+					</div>
+					<div class="ml-7">
+						<div class="flex items-center">
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div class="ml-3">22/01/2022</div>
+						</div>
+						<div class="py-2 flex items-center">
+							<div class="text-white bg-gray-800 py-1 px-3">Verified</div>
+							<div class="ml-2 text-gray-800 hy-font-bolded text-base">Maria Richardson</div>
+						</div>
+					</div>
+				</div>
+				<div class="hy-font-bolded text-gray-800 text-base">Very impressed. Must get if you are a heavy runner!</div>
+				<div class="text-base text-gray-500 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Phasellus luctus luctus venenatis. Ut auctor ipsum vitae arcu lobortis, eget bibendum orci aliquet.
+					Nam et mi mollis, porta dui sit amet, sodales risus. Vestibulum sagittis sed massa non mattis. Proin
+					egestas, neque vitae pharetra rutrum, mi ligula vehicula diam, nec rhoncus est dui a sapien. Fusce
+					suscipit semper felis sodales pharetra. Morbi magna enim, finibus eget nisi vel, suscipit sodales
+					risus. Maecenas pellentesque cursus nisi, non pellentesque ex cursus non. In hac habitasse platea
+					dictumst.</div>
+			</div>
+			<div class="border border-gray-200 p-4 mt-5">
+				<div class="flex">
+					<div>
+						<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f9b9712b9aab3436b040_review.png">
+					</div>
+					<div class="ml-7">
+						<div class="flex items-center">
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div>
+								<img src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244f99f008cb13a25afb685_star.png">
+							</div>
+							<div class="ml-3">22/01/2022</div>
+						</div>
+						<div class="py-2 flex items-center">
+							<div class="text-white bg-gray-800 py-1 px-3">Verified</div>
+							<div class="ml-2 text-gray-800 hy-font-bolded text-base">Maria Richardson</div>
+						</div>
+					</div>
+				</div>
+				<div class="hy-font-bolded text-gray-800 text-base">Very impressed. Must get if you are a heavy runner!</div>
+				<div class="text-base text-gray-500 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					Phasellus luctus luctus venenatis. Ut auctor ipsum vitae arcu lobortis, eget bibendum orci aliquet.
+					Nam et mi mollis, porta dui sit amet, sodales risus. Vestibulum sagittis sed massa non mattis. Proin
+					egestas, neque vitae pharetra rutrum, mi ligula vehicula diam, nec rhoncus est dui a sapien. Fusce
+					suscipit semper felis sodales pharetra. Morbi magna enim, finibus eget nisi vel, suscipit sodales
+					risus. Maecenas pellentesque cursus nisi, non pellentesque ex cursus non. In hac habitasse platea
+					dictumst.</div>
+			</div>
+		</div>
+		<div class="text-center">
+			<button
+				class="bg-red-600 rounded-[10px] py-5 px-10 lg:py-10 lg:px-20 text-white hy-font-bolded text-2xl lg:text-30 mt-20">TRY
+				HYDRAGUN
+				30-DAYS RISK
+				FREE</button>
+		</div>
+		<div class="text-gray-500 text-xl px-8 lg:text-2xl text-left lg:text-center lg:mt-120 mt-24 max-w-1232">If you
+			don’t like it, simply write to our
+			customer support and request for a refund and we will process it. No hidden restocking fee, no questions
+			asked.</div>
+		<img class="mt-10 max-w-280 lg:max-w-348" src="https://uploads-ssl.webflow.com/6052d09f2c1fd94bf325ca6e/6244d06da6b7b64e628e2336_money.png">
+		<div class="text-gray-800 text-center hy-container text-xl">Disclaimer: This article is not
+			meant to be taken as medical advice.
+			When in doubt, seek help from a medical professional.</div>
+	</div>
+
+  <!-- last section  -->
+	<div class="hidden bg-gray-200 pt-100 pb-20 flex">
+		<div class="ml-20 w-6/12">
+			<div><img src="assets/images/Vector (1).png"></div>
+			<div class="hy-font-bolded text-black text-xl max-w-280 mt-5">Be the first to know our offers, articles, and more
+			</div>
+			<div class="mt-5">
+				<input type="text"
+					class="relative outline-none px-3 border-b border-black w-405 bg-gray-200 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:shadow-outline"
+					placeholder="Name" />
+			</div>
+			<div class="mt-3">
+				<input type="text"
+					class="relative outline-none px-3 border-b border-black w-405 bg-gray-200 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:shadow-outline"
+					placeholder="email@example.com" />
+			</div>
+			<button class="text-white px-6 py-4 rounded-[10px] bg-gray-800 mt-30">Subscriber</button>
+			<div class="text-color3 text-xs mt-5">You may unsubscribe anytime</div>
+		</div>
+		<div class="w-6/12 flex">
+			<div class="">
+				<div class="text-base text-color4">Reviews</div>
+				<div class="mt-5 text-base text-color3">How to Use Hydragun</div>
+				<div class="mt-5 text-base text-color3">Experts</div>
+				<div class="mt-5 text-base text-color3">About</div>
+				<div class="mt-5 text-base text-color3">Blog</div>
+				<div class="mt-5 text-base text-color3">Help Center</div>
+			</div>
+			<div class="ml-36">
+				<div class="text-base text-color4">Privacy</div>
+				<div class="mt-5 text-base text-color3">Terms</div>
+				<div class="mt-5 text-base text-color3">Press Release</div>
+				<div class="mt-5 text-base text-color3">Collabs</div>
+				<div class="mt-5 text-base text-color3">Careers</div>
+				<div class="mt-5 text-base text-color3">Contact Us</div>Ff
+			</div>
+		</div>
+	</div>
+
+	<!-- payment section  -->
+	<div class="hidden flex py-3 justify-between">
+		<div class="ml-20">
+			<img src="assets/images/payment.png">
+		</div>
+		<div class="mr-20">
+			<img src="assets/images/social.png">
+		</div>
+	</div>
+
+	<!-- Last footer -->
+	<div class="bg-black text-white text-center w-full px-20 py-5">© 2022 Hydragun. All Rights Reserved.</div>
+</div>
+
+	
+
+    <!-- youtube lite embeds script -->
+    <script>
+      function labnolIframe(e) {
+        var t = document.createElement("iframe");
+        t.setAttribute(
+          "src",
+          "https://www.youtube.com/embed/" + e.dataset.id + "?autoplay=1&rel=0"
+        ),
+          t.setAttribute("frameborder", "0"),
+          t.setAttribute("allowfullscreen", "1"),
+          t.setAttribute(
+            "allow",
+            "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          ),
+          e.parentNode.replaceChild(t, e);
+      }
+      function initYouTubeVideos() {
+        for (
+          var e = document.getElementsByClassName("youtube-player"), t = 0;
+          t < e.length;
+          t++
+        ) {
+          var a = e[t].dataset.id,
+            r = document.createElement("div");
+          r.setAttribute("data-id", a);
+          var i = document.createElement("img");
+          i.setAttribute("loading", "lazy");
+          (i.src = "https://i.ytimg.com/vi/ID/hqdefault.jpg".replace("ID", a)),
+            r.appendChild(i);
+          var n = document.createElement("div");
+          n.setAttribute("class", "play"),
+            r.appendChild(n),
+            (r.onclick = function () {
+              labnolIframe(this);
+            }),
+            e[t].appendChild(r);
+        }
+      }
+      document.addEventListener("DOMContentLoaded", initYouTubeVideos);
+    </script>
+    <!-- END: youtube lite embeds script -->
+  </body>
+</html>

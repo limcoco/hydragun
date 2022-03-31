@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/tailwind.css" />
+    <!-- splide carousel -->
+    <link rel="stylesheet" href="assets/splide-core.min.css" />
+    <script defer src="assets/splide.min.js"></script>
+    <style>
+      .splide__pagination__page {
+        margin: 0 4px;
+        background: gray;
+        opacity: 0.5;
+        border-radius: 50%;
+        height: 12px;
+        width: 12px;
+      }
+      .splide__pagination__page.is-active {
+        opacity: 0.8;
+      }
+    </style>
+    <!-- END: splide carousel -->
+    <!-- alpine.js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <!-- END: alpine.js -->
+
+    <!-- youtube lite embeds styles -->
+    <style>
+      .youtube-player {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+      }
+
+      .youtube-player iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 48;
+        background: 0 0;
+      }
+
+      .youtube-player img {
+        object-fit: cover;
+        display: block;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        height: auto;
+        cursor: pointer;
+        -webkit-transition: 0.4s all;
+        -moz-transition: 0.4s all;
+        transition: 0.4s all;
+      }
+
+      .youtube-player img:hover {
+        -webkit-filter: brightness(75%);
+        -moz-filter: brightness(75%);
+        filter: brightness(75%);
+      }
+
+      .youtube-player .play {
+        height: 72px;
+        width: 72px;
+        left: 50%;
+        top: 50%;
+        margin-left: -36px;
+        margin-top: -36px;
+        position: absolute;
+        background: url(https://assets.website-files.com/5f47c76e0747d1dab44d8e4e/6181f68193b65703fb7e0910_play%20icon.svg)
+          no-repeat;
+        cursor: pointer;
+      }
+    </style>
+    <!-- END: youtube lite embeds styles -->
+
+    <title>Page</title>
+  </head>
+  <body class="font-main">
+    <nav class="border border-transparent border-b-gray-200">
+      <div class="ref--logo__cont flex items-center justify-center">
+        <a
+          class="ref--nav-logo block w-auto py-7 tablet:px-8"
+          href="https://www.hydragun.com/"
+        >
+          <!-- HYDRAGUN logo -->
+          <svg
+            class="text-hydragun-black h-4 tablet:h-5"
+            fill="none"
+            viewBox="0 0 1434 182"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M116.07 6.19V75.68H38.29V6.19H0V178.51H38.29V105.94H116.07V178.51H154.36V6.19H116.07Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M293.55 6.19L256.21 78.52H254.31L235.88 41.88L217.44 6.19H172.05L236.11 112.56V178.51H274.4V112.56L338.7 6.19H293.55Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M396.37 145.65H424.5C454.5 145.65 469.64 127.65 469.64 91.75C469.64 56.53 454.52 39.04 424.5 39.04H396.37V145.65ZM358.08 178.51V6.19H430.41C455.7 6.19 475.08 13.99 488.79 29.59C502.79 45.19 509.59 66.22 509.59 92.46C509.59 118.7 502.74 139.46 488.79 155.1C475.08 170.7 455.7 178.51 430.41 178.51H358.08Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M573.17 86.32H607.44C624.44 86.32 634.44 77.1 634.44 62.21C634.44 46.84 625.93 39.04 608.67 39.04H573.17V86.32ZM534.88 178.51V6.19H620.21C655.43 6.19 675.03 25.57 675.03 57.44C675.03 76.59 664.86 91.71 648.79 99.99V101.88C664.63 106.13 672.43 117.48 672.43 135.88V157.88C672.43 167.1 673.373 173.957 675.26 178.45H636.03C634.37 174.9 633.42 168.04 633.42 157.45V141.63C633.42 126.27 627.51 118.94 609.79 118.94H573.17V178.51H534.88Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M761.24 99.56L778.03 46.14H779.44L795.28 99.56L801.9 119.17H754.62L761.24 99.56ZM755.8 6.19L695.03 178.51H734.5L744.67 148.51H811.57L821.49 178.51H863.33L800.23 6.19H755.8Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M1107.14 6.19H1145.2V110.19C1145.2 133.12 1158.67 146.83 1181.6 146.83C1204.29 146.83 1218 133.83 1218 110.19V6.19H1256.03V112.56C1256.03 133.83 1249.17 150.56 1235.7 162.67C1222.23 174.78 1204.26 180.87 1181.33 180.87C1132.4 180.87 1107.11 154.39 1107.11 112.56L1107.14 6.19Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M1395.24 6.19V75.68L1397.36 125.09H1395.94L1326.45 6.19H1282.25V178.51H1320.54V108.07L1318.18 60.55H1319.83L1388.85 178.51H1433.06V6.19H1395.24Z"
+              fill="currentColor"
+            ></path>a
+            <path
+              d="M1052.66 87.69H1016.92V135.35C1009.34 144 994.3 147.35 980.12 147.35C965.04 147.35 954.43 142.48 946.31 132.73C938.19 122.98 934.11 109.23 934.11 91.46C934.11 73.5267 938.213 59.6267 946.42 49.76C954.63 39.89 964.8 34.95 978.95 34.95C988.637 34.95 997.117 37.2333 1004.39 41.8C1010.59 45.7649 1015.39 51.5645 1018.13 58.39H1018.78L1053.56 48.65C1050.3 40.0005 1045.56 31.9818 1039.56 24.95L1039.47 24.85C1039.2 24.54 1038.94 24.23 1038.66 23.93C1035.07 19.9082 1031.01 16.3265 1026.58 13.26C1013.72 4.42 997.757 0 978.69 0C960.94 0 946.45 3.89 933.2 11.66C920.181 19.2058 909.684 30.4333 903.03 43.93C896.17 57.67 892.737 73.5067 892.73 91.44C892.73 118.773 900.527 140.673 916.12 157.14C931.71 173.64 954.98 181.88 981.63 181.88C1017.78 181.88 1044.92 163.83 1052.63 151.27L1052.66 87.69Z"
+              fill="currentColor"
+            ></path>
+            <path
+              d="M973.2 80C973.2 80 940.67 91 908.98 91C877.29 91 858.26 80.15 858.26 80.15V118.65C858.26 118.65 877.26 129.5 908.98 129.5C940.7 129.5 973.2 118.5 973.2 118.5C973.2 118.5 1005.72 107.5 1037.41 107.5C1069.1 107.5 1088.13 118.35 1088.13 118.35V79.85C1088.13 79.85 1069.13 69 1037.41 69C1005.69 69 973.2 80 973.2 80Z"
+              fill="#BE0A0A"
+            ></path>
+          </svg>
+          <!-- END: HYDRAGUN logo -->
+        </a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="hy-container">
+        <h2
+          class="hy-font-bolded mb-6 text-5xl tablet:text-7xl desktop:text-8xl"
+        >
+          Percussive Therapy:
+        </h2>
+      </div>
+    </div>
+  </body>
+</html>
